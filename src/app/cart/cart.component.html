@@ -1,0 +1,45 @@
+
+ <div class="container py-5 my-5">
+
+
+    <div class="bg-main-light p-5"  *ngIf=" !isloading  ">
+        cart is loading
+    </div>
+    
+    <div class="bg-main-light p-5"  *ngIf="!cartisempty ">
+        cart is empty
+    </div>
+
+    <div class="bg-main-light p-5" *ngIf="cartdetials?.data">
+        <h2>cart shop :</h2>
+        <div class="d-flex justify-content-between align-items-center py-2">
+            <div>
+                <h5>total price : <span class="text-main"> {{cartdetials.data.totalCartPrice}}</span></h5>
+                <button class="btn" (click)="removecart()"><i class="fa-regular fa-trash-can mx-2"></i>Remove All</button>
+
+            </div>
+            <h5>total numbers :  <span class="text-main">{{cartdetials.numOfCartItems}}</span></h5>
+        </div>
+        <div class="row border-bottom p-2 align-items-center " *ngFor="let product of cartdetials.data.products |filterCart">
+            <div class="col-md-2">
+                <img [src]="product.product.imageCover" class="w-100" alt="">
+            </div>
+            <div class="col-md-10 ">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h5>{{product.product.title}}</h5>
+                        <h6 class="text-main">{{product.price}} EGP</h6>
+                        <button class="btn btn-sm m-0 p-0 text-danger" (click)="removeitem(product.product.id)"><i class="fa-regular fa-trash-can mx-2"></i>Remove</button>
+                       </div>
+        
+                       <div>
+                        <button class="btn btn-count" (click)="updatecart(product.product.id, product.count+1)" > +</button>
+                        <span class="mx-3">{{product.count}}</span>
+                        <button class="btn btn-count" (click)="updatecart(product.product.id, product.count-1)"> -</button>
+                       </div>
+                </div>              
+            </div>
+        </div>
+    </div>
+
+ </div>
