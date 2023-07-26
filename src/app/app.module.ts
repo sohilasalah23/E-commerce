@@ -18,6 +18,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { MainsliderComponent } from './mainslider/mainslider.component';
 import { SearchproductPipe } from './searchproduct.pipe';
 import { BrandsComponent } from './brands/brands.component';
+import { BrandDetialsComponent } from './brand-detials/brand-detials.component';
 
 
 
@@ -35,6 +36,7 @@ import { BrandsComponent } from './brands/brands.component';
     MainsliderComponent,
     SearchproductPipe,
     BrandsComponent,
+    BrandDetialsComponent,
     
   ],
   imports: [

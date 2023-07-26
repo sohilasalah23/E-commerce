@@ -7,6 +7,7 @@ import { AuthGuard } from './auth.guard';
 import { ProductDetialsComponent } from './product-detials/product-detials.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { BrandsComponent } from './brands/brands.component';
+import { BrandDetialsComponent } from './brand-detials/brand-detials.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'login',pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:"Categories",canActivate:[AuthGuard],component:CategoriesComponent},
   {path:"brands",canActivate:[AuthGuard],component:BrandsComponent},
   {path:"productdetials/:id",canActivate:[AuthGuard],component:ProductDetialsComponent},
+  {path:"brandsdetials/:id",canActivate:[AuthGuard],component:BrandDetialsComponent},
   { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
 ];
 

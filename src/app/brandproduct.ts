@@ -1,7 +1,8 @@
 export interface Brandproduct {
     _id:string,
     image:string,
-    name:string
+    name:string,
+    updatedAt:string
 }
 
 
