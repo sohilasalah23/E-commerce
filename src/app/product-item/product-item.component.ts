@@ -16,7 +16,9 @@ export class ProductItemComponent {
 
   addtocart(id:string){
    return this._cartService.addtocart(id).subscribe({
-      next:(res)=>console.log(res),
+      next:(res)=>{
+        this._cartService.numOfCartItems.next(res.numOfCartItems)
+      },
       error:(err)=>console.log(err)
       
       

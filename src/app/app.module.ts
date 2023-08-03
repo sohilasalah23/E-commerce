@@ -19,6 +19,10 @@ import { MainsliderComponent } from './mainslider/mainslider.component';
 import { SearchproductPipe } from './searchproduct.pipe';
 import { BrandsComponent } from './brands/brands.component';
 import { BrandDetialsComponent } from './brand-detials/brand-detials.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AllordersComponent } from './allorders/allorders.component';
+
+
 
 
 
@@ -37,6 +41,10 @@ import { BrandDetialsComponent } from './brand-detials/brand-detials.component';
     SearchproductPipe,
     BrandsComponent,
     BrandDetialsComponent,
+    CheckoutComponent,
+    AllordersComponent,
+    
+
     
   ],
   imports: [
