@@ -28,8 +28,26 @@ constructor(private _authService:AuthService, private _router:Router){
       password:new FormControl('',[Validators.required,Validators.pattern(/^[A-Z][a-z0-9]{3,8}$/)]),
       rePassword:new FormControl('',[Validators.required,Validators.pattern(/^[A-Z][a-z0-9]{3,8}$/)]),
       phone:new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(13)]),
+    },{
+      validators:this.validaterepassword
     }
   )
+
+
+
+
+  validaterepassword(registerform:any){
+    let passwordcontrol = registerform.get("password")
+    let repasswordcontrol = registerform.get("rePassword")
+
+
+    if(passwordcontrol.value==repasswordcontrol.value){
+      return null
+    }else{
+      repasswordcontrol.setErrors({repasswordNotMatch:"password and repassword should be matched"})
+      return {repasswordNotMatch:"password and repassword should be matched"}
+    }
+  }
 
 
 

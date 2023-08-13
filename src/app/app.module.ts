@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FeaturedproductsComponent } from './featuredproducts/featuredproducts.component';
@@ -21,6 +21,8 @@ import { BrandsComponent } from './brands/brands.component';
 import { BrandDetialsComponent } from './brand-detials/brand-detials.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AllordersComponent } from './allorders/allorders.component';
+import { HttpInterceptorInterceptor } from './http-interceptor.interceptor';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -43,6 +45,7 @@ import { AllordersComponent } from './allorders/allorders.component';
     BrandDetialsComponent,
     CheckoutComponent,
     AllordersComponent,
+    LoaderComponent,
     
 
     
@@ -57,7 +60,11 @@ import { AllordersComponent } from './allorders/allorders.component';
    FormsModule  
 
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:HttpInterceptorInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

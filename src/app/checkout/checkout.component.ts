@@ -9,9 +9,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent {
-  // cartid:string|null = localStorage.getItem("cartid")
-
-
   cartid:string=""
 
   shippingAddress:FormGroup= new FormGroup({
@@ -35,14 +32,7 @@ export class CheckoutComponent {
   handleOnline(){
     this._CartService.generateOnlinePayment(this.cartid,this.shippingAddress.value).subscribe({
       next:(res)=>{
-        console.log(res.session.client_reference_id)
-        localStorage.setItem("cartid",res.session.client_reference_id)
-
-
         if(res.status=="success"){
-        
-
-          console.log(res.session.url)
           window.location.href=res.session.url
         }
       }
