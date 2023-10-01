@@ -19,12 +19,25 @@ export class CategoriesComponent implements OnInit {
     dots: false,
     navSpeed: 700,
     navText: ['', ''],
-    responsive: {
-      0: {
-        items: 8
+    responsive:{
+      0:{
+          items:1,
+          nav:true
+      },
+      400:{
+        items:2,
+        nav:true
+      },
+      600:{
+          items:3,
+          nav:true
+      },
+      1000:{
+          items:5,
+          nav:true,
+          loop:true
       }
-    },
-    nav: true
+  }
   }
 
   constructor(private _productsService:ProductsService){}

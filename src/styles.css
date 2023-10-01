@@ -64,3 +64,7 @@ a:hover {
 .bg-main-light {
     background-color: var(--light-color) !important;
 }
+.activerouter{
+    background-color: var(--main-color);
+    border-radius: 1rem;
+}

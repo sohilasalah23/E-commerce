@@ -18,9 +18,6 @@ export class NavBarComponent {
         this.isloggedin=false
       }
     })
-
-
-
     this._cartservice.numOfCartItems.subscribe((res)=>
       this.numOfCartItems=res
     )

@@ -1,29 +1,27 @@
 <nav class="navbar navbar-expand-lg bg-white fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="../../assets/images/freshcart-logo.svg" alt="" class="w-100"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse mx-3" id="navbarScroll" >
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;" *ngIf="isloggedin" >
+      <div class="collapse navbar-collapse mx-3" id="navbarSupportedContent" >
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"  *ngIf="isloggedin" >
           <li class="nav-item">
-            <a class="nav-link " routerLink="home">Home</a>
+            <a class="nav-link " routerLink="home" routerLinkActive="activerouter">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="Categories">categories</a>
+            <a class="nav-link" routerLink="Categories" routerLinkActive="activerouter">categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="brands">brands</a>
+            <a class="nav-link" routerLink="brands" routerLinkActive="activerouter">brands</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="cart">cart</a>
+            <a class="nav-link" routerLink="cart" routerLinkActive="activerouter">cart</a>
           </li>
 
         </ul>
-      </div>
-
         <div class="d-flex " role="search">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-flex j" >
             <li class="nav-item ">
               <a class="nav-link">  <i class="fa-brands text-black fa-instagram"></i>   </a>  
             </li>
@@ -32,12 +30,6 @@
             </li>
             <li class="nav-item ">
               <a class="nav-link">   <i class="fa-brands text-black fa-twitter"></i>  </a>             
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link">   <i class="fa-brands text-black fa-linkedin"></i> </a>            
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link">  <i class="fa-brands text-black fa-youtube"></i>  </a>             
             </li>
             <li class="nav-item" *ngIf="!isloggedin">
               <a class="nav-link " routerLink="signup">Register</a>
@@ -48,7 +40,7 @@
             <li (click)="logout ()" class="nav-item" *ngIf="isloggedin">
               <a class="nav-link logOut cursor-pointer">logOut</a>
             </li>
-            <li class="nav-item position-relative" *ngIf="isloggedin">    
+            <li class="nav-item position-relative d-flex" *ngIf="isloggedin">    
           <a class="nav-link cursor-pointer" routerLink="/cart">
             <i class="fa fa-shopping-cart text-main fs-3"></i>
             <div class="badge bg-main position-absolute top-0 end-0">{{numOfCartItems}}</div>
@@ -57,7 +49,12 @@
             </li>
           
           </ul>
-        </div>     
+        </div>
+      </div>
+
+          
       </div> 
   </nav>
 
+
+  
