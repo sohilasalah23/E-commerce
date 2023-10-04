@@ -1,3 +1,11 @@
 .btn-count{
     border: 1px solid #0aad0a !important;
 }
+/* media */
+@media screen and (max-width:766px){
+    .col-md-6{
+    justify-content: start !important 
+        
+    }
+    
+}

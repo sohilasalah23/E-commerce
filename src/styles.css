@@ -10,7 +10,7 @@
 }
 
 body {
-    padding: 100px;
+    padding-top: 100px;
     font-family: var(--font-family) !important;
 }
 
@@ -67,4 +67,5 @@ a:hover {
 .activerouter{
     background-color: var(--main-color);
     border-radius: 1rem;
+    padding-left: 1rem;
 }
